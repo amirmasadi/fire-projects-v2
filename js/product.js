@@ -1,154 +1,49 @@
-let showMoreBtnAtCount = 1;
-let showMoreBtnAtCount2 = 3;
-let showMoreBtnAtCount3 = 3;
-let showMoreBtnAtCount4 = 3;
+let VisibleLiCount = 3;
+let allSubmenuUls = document.querySelectorAll(".submenu");
+let i = 0;
 
-let levelzero = document.querySelectorAll(".nav-item");
-let levelone = document.querySelectorAll(".level-one");
-let leveltwo = document.querySelectorAll(".level-two");
-let leveltree = document.querySelectorAll(".level-tree");
-
-let showMore = false;
-
-if (levelzero.length - 1 > showMoreBtnAtCount) {
-  
-  levelzero.forEach((itm, index) => {
-    if (index > showMoreBtnAtCount - 1) itm.style.display = "none";
-  });
+function createShowMoreBtn() {
+  let showMoreBtn = document.createElement("a");
+  showMoreBtn.innerText = "+ نمایش بیشتر";
+  showMoreBtn.setAttribute("data-isactive", "true");
+  showMoreBtn.setAttribute("onclick", "toggleLiVisibility(this)");
+  showMoreBtn.classList.add("showMoreBtn");
+  return showMoreBtn;
 }
 
-if (levelone.length - 1 > showMoreBtnAtCount2) {
-  levelone.forEach((itm, index) => {
-    if (index > showMoreBtnAtCount2 - 1) itm.style.display = "none";
-  });
-}
-
-if (leveltwo.length - 1 > showMoreBtnAtCount3) {
-  leveltwo.forEach((itm, index) => {
-    if (index > showMoreBtnAtCount3 - 1) itm.style.display = "none";
-  });
-}
-
-if (leveltree.length - 1 > showMoreBtnAtCount4) {
-  leveltree.forEach((itm, index) => {
-    if (index > showMoreBtnAtCount4 - 1) itm.style.display = "none";
-  });
-}
-
-if(levelzero.length =1 ){
-  document.querySelector(".more-data1").style.display = "none";
-}
-if(levelone.length <= showMoreBtnAtCount2 ){
-  document.querySelector(".more-data2").style.display = "none";
-}
-
-if(leveltwo.length <= showMoreBtnAtCount3 ){
-  document.querySelector(".more-data3").style.display = "none";
-}
-
-if(leveltree.length <= showMoreBtnAtCount4 ){
-  document.querySelector(".more-data4").style.display = "none";
-}
-
-function myFunctionShowing(target) {
-  if (!showMore) {
-    showMore = true;
-    target.innerText = "- نمایش کمتر";
-    levelzero.forEach((itm, index) => {
-      if (index > showMoreBtnAtCount - 1) {
-        itm.style.visibility = "visible";
-        itm.style.display = "block";
-      }
-    });
-  } else {
-    showMore = false;
-    target.innerText = "+ نمایش بیشتر";
-    levelzero.forEach((itm, index) => {
-      if (index > showMoreBtnAtCount - 1) {
-        // itm.style.visibility = "hidden" ;
-        itm.style.display = "none";
-      }
-    });
+allSubmenuUls.forEach((ul) => {
+  if (ul.childElementCount > VisibleLiCount) {
+    for (let i = ul.childElementCount - 1; i >= VisibleLiCount; i--) {
+      ul.children[i].style.display = "none";
+    }
+    ul.appendChild(createShowMoreBtn());
   }
-}
+});
 
-
-function myFunctionShowing2(target) {
-  if (!showMore) {
-    showMore = true;
+function toggleLiVisibility(target) {
+  if (target.dataset.isactive == "true") {
+    for (
+      let i = target.parentElement.childElementCount - 1;
+      i >= VisibleLiCount;
+      i--
+    ) {
+      target.parentElement.children[i].style.display = "block";
+    }
     target.innerText = "- نمایش کمتر";
-    levelone.forEach((itm, index) => {
-      if (index > showMoreBtnAtCount2 - 1) {
-        itm.style.visibility = "visible";
-        itm.style.display = "block";
-      }
-    });
+    target.dataset.isactive = false;
   } else {
-    showMore = false;
+    for (
+      let i = target.parentElement.childElementCount - 1;
+      i >= VisibleLiCount;
+      i--
+    ) {
+      target.parentElement.children[i].style.display = "none";
+    }
     target.innerText = "+ نمایش بیشتر";
-    levelone.forEach((itm, index) => {
-      if (index > showMoreBtnAtCount2 - 1) {
-        // itm.style.visibility = "hidden" ;
-        itm.style.display = "none";
-      }
-    });
+    target.dataset.isactive = true;
   }
+  target.style.display = "block";
 }
-
-function myFunctionShowing3(target) {
-  if (!showMore) {
-    showMore = true;
-    target.innerText = "- نمایش کمتر";
-    leveltwo.forEach((itm, index) => {
-      if (index > showMoreBtnAtCount3 - 1) {
-        itm.style.visibility = "visible";
-        itm.style.display = "block";
-      }
-    });
-  } else {
-    showMore = false;
-    target.innerText = "+ نمایش بیشتر";
-    leveltwo.forEach((itm, index) => {
-      if (index > showMoreBtnAtCount3 - 1) {
-        // itm.style.visibility = "hidden" ;
-        itm.style.display = "none";
-      }
-    });
-  }
-}
-
-
-function myFunctionShowing4(target) {
-  if (!showMore) {
-    showMore = true;
-    target.innerText = "- نمایش کمتر";
-    leveltree.forEach((itm, index) => {
-      if (index > showMoreBtnAtCount4 - 1) {
-        itm.style.visibility = "visible";
-        itm.style.display = "block";
-      }
-    });
-  } else {
-    showMore = false;
-    target.innerText = "+ نمایش بیشتر";
-    leveltree.forEach((itm, index) => {
-      if (index > showMoreBtnAtCount4 - 1) {
-        // itm.style.visibility = "hidden" ;
-        itm.style.display = "none";
-      }
-    });
-  }
-}
-
-
-// function myFunction() {
-//   var x = document.getElementById("myLinks");
-//   if (x.style.display === "block") {
-//     x.style.display = "none";
-//   } else {
-//     x.style.display = "block";
-//   }
-// }
 
 function openNav() {
   //document.querySelector(".overlay").style.transform = "translateY(0%)";
@@ -207,7 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 });
-
 
 // function openNav(element) {
 

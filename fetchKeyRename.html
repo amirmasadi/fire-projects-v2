@@ -16,12 +16,16 @@
       let UntuchedUl = document.querySelector("#Untuched ul");
       let renamedUl = document.querySelector("#renamed ul");
       let renameObj = {
-        userId: "کد یکتا کاربر",
         id: "کد یکتا",
-        title: "عنوان",
-        completed: "تمام شده",
+        name: "نام",
+        username: "نام کاربری",
+        email: "ایمیل",
+        address: "آدرس",
+        phone: "شماره تماس",
+        website: "وب گاه",
+        company: "شرکت",
       };
-      fetch("https://jsonplaceholder.typicode.com/todos/1")
+      fetch("https://jsonplaceholder.typicode.com/users/1")
         .then((res) => res.json())
         .then((json) => {
           let keys = Object.keys(json);

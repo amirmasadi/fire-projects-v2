@@ -316,8 +316,12 @@ button.list-group-item:hover {
   margin: 0;
   padding: 0;
 }
-.sidebar li .submenu > li{
-  padding-right: 1rem;
+.showMoreBtn{
+  display: block;
+  padding: 0.5rem 1rem;
+}
+#nav_accordion ul{
+  margin-right: 0.7rem !important;
 }
 .nav-item {
   background-color: #fff;

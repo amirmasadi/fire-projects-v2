@@ -1,0 +1,259 @@
+@addTagHelper *, DNTCaptcha.Core
+@model Yashil.Common.Core.Dtos.ChangePasswordViewModel
+
+@{
+    ViewData["Title"] = "تغییر پسورد";
+    Layout = "_Layout";
+}
+
+<link href="/css/certificatesearch.css" rel="stylesheet" />
+
+@*full with background*@
+<section class="search-certificate-section w-100 pb-3">
+
+
+    <p class="text-center pt-5 pt-md-3 text-white fw-600 fs-18">
+        شرکت انستیتو ایزایران
+    </p>
+    <h1 class="text-center text-white  fs-55">گواهینامه های صادر شده</h1>
+
+      <form id="loginForm" method="post" class="LoginForm">
+        @*main section*@
+    <div class="container">
+
+        <div class="transparent-div-search-certificate  p-3 my-5 my-md-3">
+            <div class="row d-flex align-items-end justify-content-between">
+
+                    @*first div*@
+                    <div class="col-12 col-md-4 py-2 py-md-0">
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput" class="label-transparent-div fw-600 fs-15">مشخصات گواهینامه:</label>
+                            <input type="text" class="form-control border-0 p-3 rounded-3 mt-2" id="certificateIdInput" placeholder="شماره گواهی نامه">
+                        </div>
+
+
+                    </div>
+                    @*sec div*@
+                    <div class="col-12 col-md-4 py-2 py-md-0 px-0">
+                        <div class="dntCaptcha">
+                            <div class="dntCaptcha">
+                                <label class="label-transparent-div fw-600 fs-15" for="">عدد مشاهده شده در تصویر:</label>
+
+                                <div class="d-block d-lg-flex align-items-center ">
+
+                                    <div>
+                                        <img class="dntCaptcha-img" alt="captcha"
+                                             id="dntCaptchaImg"
+                                             name="dntCaptchaImg" />
+                                        <input id="DNTCaptchaToken" name="DNTCaptchaToken" type="hidden" />
+                                        <input id="DNTCaptchaText" name="DNTCaptchaText" type="hidden" />
+                                    </div>
+                                    <div>
+                                        <div class="svg-refresh" id="dntCaptchaRefreshButton"
+                                             name="dntCaptchaRefreshButton" onclick="doRefreshCaptcha()">
+                                        </div>
+                                    </div>
+
+                                    @Html.TextBoxFor(x => x.DNTCaptchaInputText, new { placeholder="عدد را وارد کنید" , autocomplete = "off" , @class="form-control input-login input-login-page w-100 ss02 me-2  text-left border-0 p-3 rounded-3",@maxlength="4"})
+
+
+                                </div>
+
+                                <div style="height:0px">
+                                    @Html.ValidationMessageFor(x => x.DNTCaptchaInputText, "", new { @class = "validationMessage fs-12 text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    @*third div*@
+                    <div class="col-12 col-md-4 py-2 py-md-0">
+                        <button type="submit" class="SearchCertificateButton btn button-search-certificate d-flex align-item-center justify-content-center  w-100 p-3   rounded-3"> <span class="text-white fw-600 fs-15">جستجوی گواهینامه</span> <img src="~/images/svg/search-alt-svgrepo-com.svg" class="svg-search-certificate ms-3" /> </button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+@*print response*@
+<section>
+    <div class="showing-response  my-5" >
+            <div class="container">
+                <div class="row">
+                    <div id="myData" class="rounded-3  p-3">
+                       
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</section>
+
+@section scripts
+    {
+        <script type="text/javascript">
+
+            hideErrorMessage($('#validationErrorMessage'));
+            $("#loginForm").submit(function (e) {
+                hideErrorMessage($('#validationErrorMessage'));
+                showSpinner($('#spinner'));
+                disableButton($('.SearchCertificateButton'));
+                e.preventDefault();
+                //if ($("#loginForm").valid()) {
+
+                    fetch('/api/User/GetKeyForEncryption',
+                        {
+                            method: 'GET'
+                        }).then(response => response.json()).then(rsaKey => {
+                            loginByPassword(rsaKey, e);
+                        }).catch(data => {
+                            doRefreshCaptcha();
+                            clearUserInputs();
+                            hideSpinner($('#spinner'));
+                            enableButton($('.SearchCertificateButton'));
+                            showErrorMessage('مشکل در ورود به سایت', $("#validationErrorMessage"));
+                        });
+
+
+                //} else {
+                //    hideSpinner($('#spinner'));
+                //    enableButton($('.SearchCertificateButton'));
+                //    showErrorMessage('ورودی ها را چک نمایید', $("#validationErrorMessage"));
+                //    $('#spinner').css('display', 'none');
+                //}
+            });
+            function loginByPassword(rsaKey, e) {
+                var certificateId = $("#certificateIdInput").val();
+                certificateId = certificateId.toEnglishDigit();
+                $("#certificateIdInput").val(certificateId);
+                var jsonObject = Object.fromEntries(new FormData(e.target));
+                jsonObject.CertificateNumber = certificateId;
+                //jsonObject.Password = encryptRsa(jsonObject.Password, rsaKey);
+                //jsonObject.PublicPageLoginForm = Boolean(($("#PublicPageLoginForm").val().toLowerCase() === 'true'));
+                jsonObject.Key = rsaKey.entryKey;
+
+                var formData = new FormData();
+                for (let key in jsonObject) {
+                    formData.append(key, jsonObject[key]);
+                }
+
+       fetch('/api/certificate/SearchByCertificateNumberAsync',
+                    {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data =>{
+
+
+
+//markup = () => {
+//  return "<div> `${data[i].id}` </div>";
+
+//}
+
+
+
+                                    for (var element in data.certificateStatistic) {
+                                          console.log(`${element}: ${data.certificateStatistic[element]}`);
+                                              mainContainer.insertAdjacentHTML('beforeend', markup(`${element}: ${data.certificateStatistic[element]}`))
+                                        }                     
+
+    //                                        for (var i = 0; i < data.length; i++) {
+    //                        var creatediv = document.createElement("div");
+    //                        div.innerHTML = 'certificateStatistic: ' + data[i].id +
+    //                                        'issueDateInt: ' + data[i].issueDateInt +
+    //                                        'number: ' + data[i].number +
+    //                                        'courseTitle: ' + data[i].courseTitle +
+    //                                        'courseTitle: ' + data[i].courseTitle +
+    //                                        'fullName: ' + data[i].fullName +
+    //                                        'nationalCode: ' + data[i].nationalCode +
+    //                                        'courseDuration: ' + data[i].courseDuration +
+    //                                        'score: ' + data[i].score +
+    //                                        'courseType: ' + data[i].courseType ;
+
+    //                                mainContainer.appendChild(creatediv);
+
+
+    //}
+        console.log(JSON.stringify(data));
+    
+              
+
+
+                    })
+            }
+            var mainContainer = document.getElementById('myData');
+    var certificateSample = {
+    "certificateStatistic": {
+        "id": 93220,
+        "issueDateInt": "1399/10/6",
+        "number": "92094247",
+        "courseTitle": "ایمنی حریق و اصول پیشگیری در ساختمان های تجاری و مسکونی دولتی    Fire safety and prevention principles in government commercial and residential buildings",
+        "fullName": "سید محسن  هاشمی ",
+        "nationalCode": "3560091977",
+        "courseDuration": "16",
+        "score": "95",
+        "courseType": "حضوری"
+    },
+    "isSuccess": true,
+    "message": "بررسی با موفقیت انجام شد"
+}
+   
+var markup = (data) => {
+    let keys = Object.keys(data);
+    return `
+        <div class=" text-white px-4 py-3 " style="background: #010c29;     
+    
+">
+            <p class="fs-18">${certificateSample.certificateStatistic[key]} = ${data[key]} </p>
+        </div>
+    `
+}
+
+
+
+
+
+
+
+
+        </script>
+        <script src="~/js/captcha.js"></script>
+        <script src="~/js/forge.all.min.min.js"></script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------
+{
+    "certificateStatistic": {
+        "id": 93220,
+        "issueDateInt": "1399/10/6",
+        "number": "92094247",
+        "courseTitle": "ایمنی حریق و اصول پیشگیری در ساختمان های تجاری و مسکونی دولتی    Fire safety and prevention principles in government commercial and residential buildings",
+        "fullName": "سید محسن  هاشمی ",
+        "nationalCode": "3560091977",
+        "courseDuration": "16",
+        "score": "95",
+        "courseType": "حضوری"
+    },
+    "isSuccess": true,
+    "message": "بررسی با موفقیت انجام شد"
+}
