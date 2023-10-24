@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="Untuched">
+      <ul></ul>
+    </div>
+    <div id="renamed" style="direction: rtl">
+      <ul></ul>
+    </div>
+    <script>
+      let UntuchedUl = document.querySelector("#Untuched ul");
+      let renamedUl = document.querySelector("#renamed ul");
+      let renameObj = {
+        userId: "کد یکتا کاربر",
+        id: "کد یکتا",
+        title: "عنوان",
+        completed: "تمام شده",
+      };
+      fetch("https://jsonplaceholder.typicode.com/todos/1")
+        .then((res) => res.json())
+        .then((json) => {
+          let keys = Object.keys(json);
+          keys.forEach((key) => {
+            UntuchedUl.innerHTML += `<li> ${key} = ${json[key]} </li>`;
+            renamedUl.innerHTML += `<li> ${renameObj[key]} = ${json[key]} </li>`;
+          });
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transferee information</title>
+
+    <link rel="stylesheet" href="./font/IRANYekan/WebFonts/css/style.css" />
+
+    <link rel="stylesheet" href="./css/bootstrap.rtl.min.css" />
+
+    <link rel="stylesheet" href="./css/customStyle1.css" />
+  </head>
+
+  <body>
+    <div class="virtual-body ">
+      
+    <!-- tabs -->
+    <section id="tabs" class="mx-auto py-5">
+      <div class="container custom-container">
+        <div class="row">
+          <ul class="nav nav-tabs bg-white rounded" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active text-secondary"
+                id="home-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#home"
+                type="button"
+                role="tab"
+                aria-controls="home"
+                aria-selected="true"
+              >
+                <svg
+                  width="22px"
+                  height="22px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 5H7C5.89543 5 5 5.89543 5 7V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V7C19 5.89543 18.1046 5 17 5H15"
+                    stroke="#6C757D"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 12H15"
+                    stroke="#6C757D"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 16H15"
+                    stroke="#6C757D"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z"
+                    stroke="#6C757D"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle cx="9" cy="12" r="1" fill="#6C757D" />
+                  <circle cx="9" cy="16" r="1" fill="#6C757D" /></svg
+                >تحویل گیرنده
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link text-secondary disabled"
+                id="myprofile-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#profile"
+                type="button"
+                role="tab"
+                aria-controls="profile"
+                aria-selected="false"
+              >
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  class="svg-inline--fa fa-file-invoice fa-w-12"
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fas"
+                  data-icon="file-invoice"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 384 512"
+                  data-fa-i2svg=""
+                  width="18"
+                  height="18"
+                >
+                  <path
+                    fill="#192836"
+                    d="M312 416h-80c-4.42 0-8 3.58-8 8v16c0 4.42 3.58 8 8 8h80c4.42 0 8-3.58 8-8v-16c0-4.42-3.58-8-8-8zM64 240v96c0 8.84 8.19 16 18.29 16h219.43c10.1 0 18.29-7.16 18.29-16v-96c0-8.84-8.19-16-18.29-16H82.29C72.19 224 64 231.16 64 240zm32 16h192v64H96v-64zM72 96h112c4.42 0 8-3.58 8-8V72c0-4.42-3.58-8-8-8H72c-4.42 0-8 3.58-8 8v16c0 4.42 3.58 8 8 8zm0 64h112c4.42 0 8-3.58 8-8v-16c0-4.42-3.58-8-8-8H72c-4.42 0-8 3.58-8 8v16c0 4.42 3.58 8 8 8zm297.9-62.02L286.02 14.1c-9-9-21.2-14.1-33.89-14.1H47.99C21.5.1 0 21.6 0 48.09v415.92C0 490.5 21.5 512 47.99 512h288.02c26.49 0 47.99-21.5 47.99-47.99V131.97c0-12.69-5.1-24.99-14.1-33.99zM256.03 32.59c2.8.7 5.3 2.1 7.4 4.2l83.88 83.88c2.1 2.1 3.5 4.6 4.2 7.4h-95.48V32.59zm95.98 431.42c0 8.8-7.2 16-16 16H47.99c-8.8 0-16-7.2-16-16V48.09c0-8.8 7.2-16.09 16-16.09h176.04v104.07c0 13.3 10.7 23.93 24 23.93h103.98v304.01z"
+                  ></path>
+                </svg>
+                پیش فاکتور
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content bg-white" id="myTabContent">
+            <div
+              class="tab-pane fade show active"
+              id="home"
+              role="tabpanel"
+              aria-labelledby="home-tab"
+            >
+                <!--End tabs -->
+                
+              <!-- content start-->
+
+              <div class="container-fliud">
+                <div class="row">
+                  <div class="col-12 py-4 px-sm-1 px-md-4">
+                    <!-- information user-->
+                    <div class="detail-dis2 rounded p-sm-0 p-md-4">
+                      <div class="row mycontent">
+                        <div class="d-flex justify-content-between mb-3">
+                          <div class="user-information">
+                            <span
+                              >اطلاعات تحویل گیرنده خود را انتخاب نمائید :</span
+                            >
+                          </div>
+                          <div class="getback d-flex align-items-center gap-1">
+                            <a href="#"> <span>بازگشت</span></a>
+                            <a href="">
+                              <img
+                                src="./img/left-arrow-svgrepo-com.svg"
+                                alt="left arrow svg"
+                                class="mysvg"
+                            /></a>
+                          </div>
+                        </div>
+
+                        <!-- select delivery-->
+                        <div class="row p-0 mx-auto select-delivery">
+                          <!--  delivery one-->
+                          <div class="col-12 col-md-12 col-lg-6 col-xl-3 my-2">
+
+                            <div
+                              class=" d-sm-block d-md-flex justify-content-between align-items-center h-100"
+                            >
+
+                              <div
+                                class="AddressContent rounded-3  my-3 w-100 h-100"
+                              >
+                              <label
+                              for="flexRadioDefault1"
+                              class="typeofpayment w-100 h-100  border-0 px-3 pt-3"
+                              id="mydiv1"
+                            >
+                                <div
+                                  class="form-check-select-delivery py-2 rounded-3 d-flex justify-content-start align-item-center gap-2"
+                                >
+
+                                    <div class="d-flex align-items-center">
+                                      <input
+                                        class="form-check-input m-0 p-0 "
+                                        type="radio"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                        onchange="myFunction('mydiv1')"
+                                      />
+
+                                    </div>
+
+                                    <div
+                                      class="d-flex align-items-center justify-content-start"
+                                    >
+                                      <label
+                                        class="form-check-label"
+                                        for="flexRadioDefault1"
+                                      >
+                                        انتخاب تحویل گیرنده
+                                      </label>
+                                    </div>
+                                  
+                                </div>
+                                <div class="py-3">
+                                  <strong>0430147953</strong>
+
+                                  <div class="py-3">
+                                    <span>کد ملی فراگیر: </span>
+                                    <span>0430147953</span>
+                                  </div>
+
+                                  <div class="pt-1 pb-4">
+                                    <span>شماره کارت حکمت: </span>
+                                    <span>012345678910</span>
+                                  </div>
+
+                                  <div
+                                    class="de-section d-flex justify-content-end "
+                                  >
+                                    <button
+                                      class="btn btn-primary de-btn"
+                                      type="button"
+                                    >
+                                      حذف
+                                    </button>
+                                    <button
+                                      class="btn btn-primary de-btn"
+                                      type="button"
+                                    >
+                                      ویرایش
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </label>
+                            </div>
+                          </div>
+                          <!--  delivery two-->
+                          <div class="col-12 col-md-12 col-lg-6 col-xl-3 my-2">
+
+                            <div
+                              class=" d-sm-block d-md-flex justify-content-between align-items-center h-100"
+                            >
+
+                              <div
+                                class="AddressContent rounded-3  my-3 w-100 h-100"
+                              >
+                              <label
+                              for="flexRadioDefault2"
+                              class="typeofpayment w-100 h-100  border-0 px-3 pt-3"
+                              id="mydiv2"
+                            >
+                                <div
+                                  class="form-check-select-delivery py-2 rounded-3 d-flex justify-content-start align-item-center gap-2"
+                                >
+
+                                    <div class="d-flex align-items-center">
+                                      <input
+                                        class="form-check-input m-0 p-0"
+                                        type="radio"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault2"
+                                        onchange="myFunction('mydiv2')"
+                                      />
+                                    </div>
+
+                                    <div
+                                      class="d-flex align-items-center justify-content-start"
+                                    >
+                                      <label
+                                        class="form-check-label"
+                                        for="flexRadioDefault1"
+                                      >
+                                        انتخاب تحویل گیرنده
+                                      </label>
+                                    </div>
+                                  
+                                </div>
+                                <div class="py-3">
+                                  <strong>0430147953</strong>
+
+                                  <div class="py-3">
+                                    <span>کد ملی فراگیر: </span>
+                                    <span>0430147953</span>
+                                  </div>
+
+                                  <div class="pt-1 pb-4">
+                                    <span>شماره کارت حکمت: </span>
+                                    <span>012345678910</span>
+                                  </div>
+
+                                  <div
+                                    class="de-section d-flex justify-content-end "
+                                  >
+                                    <button
+                                      class="btn btn-primary de-btn"
+                                      type="button"
+                                    >
+                                      حذف
+                                    </button>
+                                    <button
+                                      class="btn btn-primary de-btn"
+                                      type="button"
+                                    >
+                                      ویرایش
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </label>
+                            </div>
+                          </div>
+
+                          <!--  delivery tree-->
+
+                          <div class="col-12 col-md-12 col-lg-6 col-xl-3 my-2">
+
+                            <div
+                              class=" d-sm-block d-md-flex justify-content-between align-items-center h-100"
+                            >
+
+                              <div
+                                class="AddressContent rounded-3  my-3 w-100 h-100"
+                              >
+                              <label
+                              for="flexRadioDefault3"
+                              class="typeofpayment w-100 h-100  border-0 px-3 pt-3"
+                              id="mydiv3"
+                            >
+                                <div
+                                  class="form-check-select-delivery py-2 rounded-3 d-flex justify-content-start align-item-center gap-2"
+                                >
+
+                                    <div class="d-flex align-items-center">
+                                      <input
+                                        class="form-check-input m-0 p-0"
+                                        type="radio"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault3"
+                                        onchange="myFunction('mydiv3')"
+                                      />
+                                    </div>
+
+                                    <div
+                                      class="d-flex align-items-center justify-content-start"
+                                    >
+                                      <label
+                                        class="form-check-label"
+                                        for="flexRadioDefault1"
+                                      >
+                                        انتخاب تحویل گیرنده
+                                      </label>
+                                    </div>
+                                  
+                                </div>
+                                <div class="py-3">
+                                  <strong>0430147953</strong>
+
+                                  <div class="py-3">
+                                    <span>کد ملی فراگیر: </span>
+                                    <span>0430147953</span>
+                                  </div>
+
+                                  <div class="pt-1 pb-4">
+                                    <span>شماره کارت حکمت: </span>
+                                    <span>012345678910</span>
+                                  </div>
+
+                                  <div
+                                    class="de-section d-flex justify-content-end "
+                                  >
+                                    <button
+                                      class="btn btn-primary de-btn"
+                                      type="button"
+                                    >
+                                      حذف
+                                    </button>
+                                    <button
+                                      class="btn btn-primary de-btn"
+                                      type="button"
+                                    >
+                                      ویرایش
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </label>
+                            </div>
+                          </div>
+
+                          <!-- add delivery -->
+
+                          <div
+                            class="col-12 col-md-12 col-lg-6 col-xl-3 my-4 my-md-2 add-delivery"
+                          >
+                            <div
+                              class=" d-sm-block d-md-flex justify-content-between align-items-center h-100"
+                            >
+                              <div
+                                class="AddressContent2 rounded-3 px-3 pt-sm-0 pt-md-2 my-1 w-100 h-100 d-flex justify-content-center align-item-center"
+                              >
+                                <div
+                                  class="d-flex justify-content-center flex-column-reverse align-items-center"
+                                >
+                                  <div class="d-flex justify-content-center">
+                                    <span class="add-delivery"
+                                      >افزودن تحویل گیرنده</span
+                                    >
+                                  </div>
+                                  <div class="d-flex justify-content-center">
+                                    <img
+                                      src="./img/plus-large-svgrepo-com.svg"
+                                      alt="plus"
+                                      class="mysvg"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

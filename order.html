@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>order</title>
+
+    <link rel="stylesheet" href="./font/IRANYekan/WebFonts/css/style.css" />
+    <link rel="stylesheet" href="./css/bootstrap.rtl.min.css" />
+    <link rel="stylesheet" href="./css/customStyle1.css" />
+  </head>
+  <body>
+    <div class="virtual-body">
+      <!-- navigation - white menu -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="sample-navbar-header w-100 bg-light position-fixed"></div>
+      </nav>
+
+      <!-- tabs -->
+      <section id="tabs" class="mx-auto py-5">
+        <div class="container custom-container">
+          <div class="row">
+            <div class="mt-5 bg-white rounded">
+              <div class="py-4 px-3 orderHistory-title">
+                <h6
+                  class="border-bottom py-1 border-danger border-2 text-secondary"
+                >
+                  تاریخچه سفارشات
+                </h6>
+              </div>
+
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active text-secondary"
+                    id="home-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#home"
+                    type="button"
+                    role="tab"
+                    aria-controls="home"
+                    aria-selected="true"
+                  >
+                    پیش فاکتور
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link text-secondary"
+                    id="success-payment-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#success-payment"
+                    type="button"
+                    role="tab"
+                    aria-controls="success-payment"
+                    aria-selected="false"
+                  >
+                    پرداخت موفق
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link text-secondary"
+                    id="awaite-response-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#awaite-response"
+                    type="button"
+                    role="tab"
+                    aria-controls="awaite-response"
+                    aria-selected="false"
+                  >
+                    منتظر پاسخ درگاه پرداخت
+                  </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link text-secondary"
+                    id="returned-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#returned"
+                    type="button"
+                    role="tab"
+                    aria-controls="returned"
+                    aria-selected="false"
+                  >
+                    مرجوعی
+                  </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link text-secondary"
+                    id="canceled-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#canceled"
+                    type="button"
+                    role="tab"
+                    aria-controls="canceled"
+                    aria-selected="false"
+                  >
+                    انصرافی
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-content bg-white" id="myTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="home"
+                role="tabpanel"
+                aria-labelledby="home-tab"
+              >
+                <!-- end tabs -->
+
+                <!-- content start-->
+
+                <div class="container-fliud">
+                  <div class="row">
+                    <div class="col-12 p-3 p-md-3">
+                      <!-- information-->
+                      <div
+                        class="fringe-border-content border border-1 rounded-3 p-3"
+                      >
+                        <div class="border-bottom pb-4">
+                          <div
+                            class="d-flex justify-content-between align-items-baseline pb-3"
+                          >
+                            <div
+                              class="information-order d-sm-block d-md-flex gap-4"
+                            >
+                              <div>
+                                <span>چهارشنبه 5 مهر 1402</span>
+                              </div>
+                            </div>
+
+                            <div>
+                              <a href="#">
+                                <strong class="View-order-text text-info"
+                                  >مشاهده سفارش</strong
+                                >
+                                <img
+                                  src="./img/left-arrow-svgrepo-com (2).svg"
+                                  alt="left arrow"
+                                  class="mysvg"
+                                />
+                              </a>
+                            </div>
+                          </div>
+
+                          <div
+                            class="d-sm-block d-md-flex gap-4 pb- align-items-center"
+                          >
+                            <div class="pb-2">
+                              <span>کدپیگیری:</span>
+                              <strong class="text-danger">ICMEO-185225 </strong>
+                            </div>
+
+                            <div class="pb-3">
+                              <span>سفارش:</span>
+                              <strong class="text-danger"> ثبت اولیه </strong>
+                            </div>
+                          </div>
+
+                          <div class="d-flex gap-2 align-item-center py-1">
+                            <span>قیمت کل:</span>
+                            <p>3,900,020 تومان</p>
+                          </div>
+
+                          <div class="d-flex gap-2 align-item-center">
+                            <span> کد ملی فراگیر:</span>
+                            <p>0430147953</p>
+                          </div>
+                        </div>
+
+                        <div class="pt-4">
+                          <p>لیست کالا</p>
+                          <div
+                            class="d-flex align-items-center gap-2 px-3 pb-2"
+                          >
+                            <img
+                              src="./img/bookmark1.png"
+                              alt="bookmark"
+                              width="32px"
+                              height="32px"
+                            />
+                            <span> Wordpress (1)</span>
+                          </div>
+
+                          <div
+                            class="d-flex align-items-center gap-2 px-3 py-2"
+                          >
+                            <img
+                              src="./img/bookmark1.png"
+                              alt="bookmark"
+                              width="32px"
+                              height="32px"
+                            />
+                            <span> مفاهیم بنیادی در هوش مصنوعی (1) </span>
+                          </div>
+
+                          <div
+                            class="d-flex align-items-center gap-2 px-3 py-2"
+                          >
+                            <img
+                              src="./img/bookmark1.png"
+                              alt="bookmark"
+                              width="32px"
+                              height="32px"
+                            />
+                            <span> دوره آیلتس 1(شنیداری) (1)</span>
+                          </div>
+
+                          <div
+                            class="d-flex align-items-center gap-2 px-3 py-2"
+                          >
+                            <img
+                              src="./img/bookmark1.png"
+                              alt="bookmark"
+                              width="32px"
+                              height="32px"
+                            />
+                            <span>
+                              دوره آیلتس 1(شنیداری) (1)دوره آیلتس 1(شنیداری)
+                              (1)دوره آیلتس 1(شنیداری) (1)دوره آیلتس 1(شنیداری)
+                              (1)دوره آیلتس 1(شنیداری) (1)</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tab-pane fade bg-white"
+                id="success-payment"
+                role="tabpanel"
+                aria-labelledby="success-payment-tab"
+              >
+                <div class="py-3">
+                  <img
+                    src="./img/emptyOrder.svg"
+                    alt=""
+                    class="mx-auto d-block"
+                    width="200px"
+                    height="150px"
+                  />
+                  <p class="text-center fs-6">سفارشی در این قسمت وجود ندارد!</p>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade bg-white"
+                id="awaite-response"
+                role="tabpanel"
+                aria-labelledby="awaite-response-tab"
+              >
+                <!-- tab منتظر پاسخ درگاه پرداخت-->
+
+                <div class="container-fliud">
+                  <div class="row">
+                    <div class="col-12 p-3 p-md-3">
+                      <!-- information-->
+                      <div
+                        class="fringe-border-content border border-1 rounded-3 p-3"
+                      >
+                        <div class="border-bottom pb-4">
+                          <div
+                            class="d-flex justify-content-between align-items-baseline pb-3"
+                          >
+                            <div
+                              class="information-order d-sm-block d-md-flex gap-4"
+                            >
+                              <div>
+                                <span>چهارشنبه 5 مهر 1402</span>
+                              </div>
+                            </div>
+
+                            <div>
+                              <a href="#">
+                                <strong class="View-order-text text-info"
+                                  >مشاهده سفارش</strong
+                                >
+                                <img
+                                  src="./img/left-arrow-svgrepo-com (2).svg"
+                                  alt="left arrow"
+                                  class="mysvg"
+                                />
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="d-sm-block d-md-flex gap-4 pb-2">
+                            <div class="pb-2">
+                              <span>کدپیگیری:</span>
+                              <strong class="text-danger">ICMEO-185225 </strong>
+                            </div>
+
+                            <div class="pb-2">
+                              <span>سفارش:</span>
+                              <strong class="text-danger"> ثبت اولیه </strong>
+                            </div>
+                          </div>
+
+                          <div class="d-flex gap-2 align-item-center py-1">
+                            <span>قیمت کل:</span>
+                            <p>3,900,020 تومان</p>
+                          </div>
+
+                          <div class="d-flex gap-2 align-item-center">
+                            <span> کد ملی فراگیر:</span>
+                            <p>0430147953</p>
+                          </div>
+                        </div>
+
+                        <div class="pt-4">
+                          <p>لیست کالا</p>
+                          <div
+                            class="d-flex align-items-center gap-2 px-3 pb-2"
+                          >
+                            <img
+                              src="./img/bookmark1.png"
+                              alt="bookmark"
+                              width="32px"
+                              height="32px"
+                            />
+                            <span> Wordpress (1)</span>
+                          </div>
+
+                          <div
+                            class="d-flex align-items-center gap-2 px-3 py-2"
+                          >
+                            <img
+                              src="./img/bookmark1.png"
+                              alt="bookmark"
+                              width="32px"
+                              height="32px"
+                            />
+                            <span> مفاهیم بنیادی در هوش مصنوعی (1) </span>
+                          </div>
+
+                          <div
+                            class="d-flex align-items-center gap-2 px-3 py-2"
+                          >
+                            <img
+                              src="./img/bookmark1.png"
+                              alt="bookmark"
+                              width="32px"
+                              height="32px"
+                            />
+                            <span> دوره آیلتس 1(شنیداری) (1)</span>
+                          </div>
+
+                          <div
+                            class="d-flex align-items-center gap-2 px-3 py-2"
+                          >
+                            <img
+                              src="./img/bookmark1.png"
+                              alt="bookmark"
+                              width="32px"
+                              height="32px"
+                            />
+                            <span>
+                              دوره آیلتس 1(شنیداری) (1)دوره آیلتس 1(شنیداری)
+                              (1)دوره آیلتس 1(شنیداری) (1)دوره آیلتس 1(شنیداری)
+                              (1)دوره آیلتس 1(شنیداری) (1)</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade bg-white"
+                id="returned"
+                role="tabpanel"
+                aria-labelledby="returned-tab"
+              >
+                <div class="py-3">
+                  <img
+                    src="./img/emptyOrder.svg"
+                    alt=""
+                    class="mx-auto d-block"
+                    width="200px"
+                    height="150px"
+                  />
+                  <p class="text-center fs-6">سفارشی در این قسمت وجود ندارد!</p>
+                </div>
+              </div>
+
+              <div
+                class="tab-pane fade bg-white"
+                id="canceled"
+                role="tabpanel"
+                aria-labelledby="canceled-tab"
+              >
+                <div class="container-fliud">
+                  <div class="row">
+                    <div class="col-12 p-3 p-md-3">
+                      <!-- information-->
+                      <div
+                        class="fringe-border-content border border-1 rounded-3 p-3"
+                      >
+                        <div class="border-bottom pb-4">
+                          <div
+                            class="d-flex justify-content-between align-items-baseline pb-3"
+                          >
+                            <div
+                              class="information-order d-sm-block d-md-flex gap-4"
+                            >
+                              <div>
+                                <span>چهارشنبه 5 مهر 1402</span>
+                              </div>
+                            </div>
+
+                            <div>
+                              <a href="#">
+                                <strong class="View-order-text text-info"
+                                  >مشاهده سفارش</strong
+                                >
+                                <img
+                                  src="./img/left-arrow-svgrepo-com (2).svg"
+                                  alt="left arrow"
+                                  class="mysvg"
+                                />
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="d-sm-block d-md-flex gap-4 pb-2">
+                            <div class="pb-2">
+                              <span>کدپیگیری:</span>
+                              <strong class="text-danger">ICMEO-185225 </strong>
+                            </div>
+
+                            <div class="pb-2">
+                              <span>سفارش:</span>
+                              <strong class="text-danger"> ثبت اولیه </strong>
+                            </div>
+                          </div>
+
+                          <div class="d-flex gap-2 align-item-center py-1">
+                            <span>قیمت کل:</span>
+                            <p>3,900,020 تومان</p>
+                          </div>
+
+                          <div class="d-flex gap-2 align-item-center">
+                            <span> کد ملی فراگیر:</span>
+                            <p>0430147953</p>
+                          </div>
+                        </div>
+
+                        <div class="pt-4">
+                          <p>لیست کالا</p>
+                          <div
+                            class="d-flex align-items-center gap-2 px-3 pb-2"
+                          >
+                            <img
+                              src="./img/bookmark1.png"
+                              alt="bookmark"
+                              width="32px"
+                              height="32px"
+                            />
+                            <span> Wordpress (1)</span>
+                          </div>
+
+                          <div
+                            class="d-flex align-items-center gap-2 px-3 py-2"
+                          >
+                            <img
+                              src="./img/bookmark1.png"
+                              alt="bookmark"
+                              width="32px"
+                              height="32px"
+                            />
+                            <span> مفاهیم بنیادی در هوش مصنوعی (1) </span>
+                          </div>
+
+                          <div
+                            class="d-flex align-items-center gap-2 px-3 py-2"
+                          >
+                            <img
+                              src="./img/bookmark1.png"
+                              alt="bookmark"
+                              width="32px"
+                              height="32px"
+                            />
+                            <span> دوره آیلتس 1(شنیداری) (1)</span>
+                          </div>
+
+                          <div
+                            class="d-flex align-items-center gap-2 px-3 py-2"
+                          >
+                            <img
+                              src="./img/bookmark1.png"
+                              alt="bookmark"
+                              width="32px"
+                              height="32px"
+                            />
+                            <span>
+                              دوره آیلتس 1(شنیداری) (1)دوره آیلتس 1(شنیداری)
+                              (1)دوره آیلتس 1(شنیداری) (1)دوره آیلتس 1(شنیداری)
+                              (1)دوره آیلتس 1(شنیداری) (1)</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
