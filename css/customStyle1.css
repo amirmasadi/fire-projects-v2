@@ -841,13 +841,7 @@ i.use-text:hover {
   background-color: red;
 }
 
-
 .custom-body-index
 {
   overflow-x: hidden ;
-}
-
-
-a.nav-link.level-tree {
-  padding-right: 2.5rem;
 }
