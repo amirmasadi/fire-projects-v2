@@ -12,6 +12,10 @@
     <div id="renamed" style="direction: rtl">
       <ul></ul>
     </div>
+
+    <!-- axios jsDelivr CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script>
       let UntuchedUl = document.querySelector("#Untuched ul");
       let renamedUl = document.querySelector("#renamed ul");
@@ -25,12 +29,23 @@
         website: "وب گاه",
         company: "شرکت",
       };
+
+      // http request with axios for more information see https://axios-http.com/docs/example
+      axios
+        .get("https://jsonplaceholder.typicode.com/users/1")
+        .then(function (response) {
+          let keys = Object.keys(response.data);
+          keys.forEach((key) => {
+            UntuchedUl.innerHTML += `<li> ${key} = ${response.data[key]} </li>`;
+          });
+        });
+
+      // http request with fetch
       fetch("https://jsonplaceholder.typicode.com/users/1")
         .then((res) => res.json())
         .then((json) => {
           let keys = Object.keys(json);
           keys.forEach((key) => {
-            UntuchedUl.innerHTML += `<li> ${key} = ${json[key]} </li>`;
             renamedUl.innerHTML += `<li> ${renameObj[key]} = ${json[key]} </li>`;
           });
         });
